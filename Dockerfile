@@ -4,6 +4,9 @@ LABEL maintainer="sixarms1leg"
 LABEL name="git-ssh"
 LABEL description="Git over SSH with UID/GID handling"
 
+RUN apk --no-cache add ca-certificates \
+        && update-ca-certificates
+
 RUN apk add --no-cache \
         git \
         openssh
